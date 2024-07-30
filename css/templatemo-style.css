@@ -919,10 +919,14 @@ body.lb-disable-scrolling {
 
   .owl-carousel .owl-item img {
     display: block;
-    width: 100%; }
+    width: 100%; 
+  }
+
   .owl-carousel .owl-nav.disabled,
   .owl-carousel .owl-dots.disabled {
-    display: none; }
+    display: none;
+   }
+
   .owl-carousel .owl-nav .owl-prev,
   .owl-carousel .owl-nav .owl-next,
   .owl-carousel .owl-dot {
@@ -933,14 +937,18 @@ body.lb-disable-scrolling {
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none; }
+    user-select: none; 
+  }
+
   .owl-carousel.owl-loaded {
-    display: block; }
+    display: block; 
+  }
+
   .owl-carousel.owl-loading {
     opacity: 0;
     display: block; 
   }
-  
+
   .owl-carousel.owl-hidden {
     opacity: 0; 
   }
@@ -990,27 +998,22 @@ body.lb-disable-scrolling {
   0% {
     opacity: 1; }
   100% {
-    opacity: 0; } }
+    opacity: 0; }
+   }
 
-/*
- *  Owl Carousel - Auto Height Plugin
- */
 .owl-height {
-  transition: height 500ms ease-in-out; }
+  transition: height 500ms ease-in-out; 
+}
 
-/*
- *  Owl Carousel - Lazy Load Plugin
- */
 .owl-carousel .owl-item .owl-lazy {
   opacity: 0;
-  transition: opacity 400ms ease; }
+  transition: opacity 400ms ease; 
+}
 
 .owl-carousel .owl-item img.owl-lazy {
-  transform-style: preserve-3d; }
+  transform-style: preserve-3d;
+ }
 
-/*
- *  Owl Carousel - Video Plugin
- */
 .owl-carousel .owl-video-wrapper {
   position: relative;
   height: 100%;
