@@ -7,8 +7,8 @@
 This is a responsive stacked website template created using HTML, CSS, and JavaScript. The design stacks content vertically, providing a clean and user-friendly experience across different devices.
 
 ## Table of Contents
-- [Project Description](#project-description)
-- [Demo](#demo)
+- [Project Description](https://nomankarim8.github.io/stacked/)
+- [Demo](https://nomankarim8.github.io/stacked/)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
