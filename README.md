@@ -11,7 +11,7 @@ This is a responsive stacked website template created using HTML, CSS, and JavaS
 - [Demo](https://nomankarim8.github.io/stacked/)
 - [Installation](https://nomankarim8.github.io/stacked/)
 - [Usage](https://nomankarim8.github.io/stacked/)
-- [Technologies Used](#technologies-usedhttps://nomankarim8.github.io/stacked/)
+- [Technologies Used](technologies-usedhttps://nomankarim8.github.io/stacked/)
 - [Contributing](https://nomankarim8.github.io/stacked/)
 - [License](https://nomankarim8.github.io/stacked/)
 - [Contact](https://github.com/nomankarim8/stacked/raw/main/img/main2.jpg)
