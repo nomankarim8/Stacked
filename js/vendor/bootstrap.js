@@ -1575,8 +1575,6 @@ if (typeof jQuery === 'undefined') {
   }
 
 
-  // TOOLTIP PLUGIN DEFINITION
-  // =========================
 
   function Plugin(option) {
     return this.each(function () {
@@ -1602,8 +1600,6 @@ if (typeof jQuery === 'undefined') {
   $.fn.tooltip.Constructor = Tooltip
 
 
-  // TOOLTIP NO CONFLICT
-  // ===================
 
   $.fn.tooltip.noConflict = function () {
     $.fn.tooltip = old
@@ -1612,20 +1608,12 @@ if (typeof jQuery === 'undefined') {
 
 }(jQuery);
 
-/* ========================================================================
- * Bootstrap: popover.js v3.3.1
- * http://getbootstrap.com/javascript/#popovers
- * ========================================================================
- * Copyright 2011-2014 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+
 
 
 +function ($) {
   'use strict';
 
-  // POPOVER PUBLIC CLASS DEFINITION
-  // ===============================
 
   var Popover = function (element, options) {
     this.init('popover', element, options)
@@ -1643,8 +1631,8 @@ if (typeof jQuery === 'undefined') {
   })
 
 
-  // NOTE: POPOVER EXTENDS tooltip.js
-  // ================================
+
+
 
   Popover.prototype = $.extend({}, $.fn.tooltip.Constructor.prototype)
 
@@ -1666,8 +1654,8 @@ if (typeof jQuery === 'undefined') {
 
     $tip.removeClass('fade top bottom left right in')
 
-    // IE8 doesn't accept hiding via the `:empty` pseudo selector, we have to do
-    // this manually by checking the contents.
+  o
+
     if (!$tip.find('.popover-title').html()) $tip.find('.popover-title').hide()
   }
 
@@ -1695,8 +1683,7 @@ if (typeof jQuery === 'undefined') {
   }
 
 
-  // POPOVER PLUGIN DEFINITION
-  // =========================
+
 
   function Plugin(option) {
     return this.each(function () {
@@ -1722,8 +1709,7 @@ if (typeof jQuery === 'undefined') {
   $.fn.popover.Constructor = Popover
 
 
-  // POPOVER NO CONFLICT
-  // ===================
+
 
   $.fn.popover.noConflict = function () {
     $.fn.popover = old
@@ -1732,20 +1718,13 @@ if (typeof jQuery === 'undefined') {
 
 }(jQuery);
 
-/* ========================================================================
- * Bootstrap: scrollspy.js v3.3.1
- * http://getbootstrap.com/javascript/#scrollspy
- * ========================================================================
- * Copyright 2011-2014 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+
 
 
 +function ($) {
   'use strict';
 
-  // SCROLLSPY CLASS DEFINITION
-  // ==========================
+
 
   function ScrollSpy(element, options) {
     var process  = $.proxy(this.process, this)
@@ -1867,8 +1846,7 @@ if (typeof jQuery === 'undefined') {
   }
 
 
-  // SCROLLSPY PLUGIN DEFINITION
-  // ===========================
+
 
   function Plugin(option) {
     return this.each(function () {
@@ -1887,8 +1865,7 @@ if (typeof jQuery === 'undefined') {
   $.fn.scrollspy.Constructor = ScrollSpy
 
 
-  // SCROLLSPY NO CONFLICT
-  // =====================
+
 
   $.fn.scrollspy.noConflict = function () {
     $.fn.scrollspy = old
@@ -1896,8 +1873,6 @@ if (typeof jQuery === 'undefined') {
   }
 
 
-  // SCROLLSPY DATA-API
-  // ==================
 
   $(window).on('load.bs.scrollspy.data-api', function () {
     $('[data-spy="scroll"]').each(function () {
@@ -1908,20 +1883,13 @@ if (typeof jQuery === 'undefined') {
 
 }(jQuery);
 
-/* ========================================================================
- * Bootstrap: tab.js v3.3.1
- * http://getbootstrap.com/javascript/#tabs
- * ========================================================================
- * Copyright 2011-2014 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+
 
 
 +function ($) {
   'use strict';
 
-  // TAB CLASS DEFINITION
-  // ====================
+
 
   var Tab = function (element) {
     this.element = $(element)
@@ -2020,8 +1988,7 @@ if (typeof jQuery === 'undefined') {
   }
 
 
-  // TAB PLUGIN DEFINITION
-  // =====================
+
 
   function Plugin(option) {
     return this.each(function () {
@@ -2039,8 +2006,7 @@ if (typeof jQuery === 'undefined') {
   $.fn.tab.Constructor = Tab
 
 
-  // TAB NO CONFLICT
-  // ===============
+
 
   $.fn.tab.noConflict = function () {
     $.fn.tab = old
@@ -2048,8 +2014,7 @@ if (typeof jQuery === 'undefined') {
   }
 
 
-  // TAB DATA-API
-  // ============
+
 
   var clickHandler = function (e) {
     e.preventDefault()
@@ -2062,20 +2027,12 @@ if (typeof jQuery === 'undefined') {
 
 }(jQuery);
 
-/* ========================================================================
- * Bootstrap: affix.js v3.3.1
- * http://getbootstrap.com/javascript/#affix
- * ========================================================================
- * Copyright 2011-2014 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
 
 
 +function ($) {
   'use strict';
 
-  // AFFIX CLASS DEFINITION
-  // ======================
+
 
   var Affix = function (element, options) {
     this.options = $.extend({}, Affix.DEFAULTS, options)
@@ -2177,8 +2134,6 @@ if (typeof jQuery === 'undefined') {
   }
 
 
-  // AFFIX PLUGIN DEFINITION
-  // =======================
 
   function Plugin(option) {
     return this.each(function () {
