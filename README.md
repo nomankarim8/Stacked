@@ -22,7 +22,7 @@ This project showcases a simple and elegant web template with stacked sections, 
 
 ## Demo
 
-You can view a live demo of the project [here](#).
+You can view a live demo of the project [here](https://nomankarim8.github.io/stacked/).
 
 ## Installation
 
