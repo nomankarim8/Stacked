@@ -972,31 +972,19 @@
     }
   };
 
-  /**
-   * Slides to the next item.
-   * @public
-   * @param {Number} [speed] - The time in milliseconds for the transition.
-   */
+
   Owl.prototype.next = function(speed) {
     speed = speed || false;
     this.to(this.relative(this.current()) + 1, speed);
   };
 
-  /**
-   * Slides to the previous item.
-   * @public
-   * @param {Number} [speed] - The time in milliseconds for the transition.
-   */
+
   Owl.prototype.prev = function(speed) {
     speed = speed || false;
     this.to(this.relative(this.current()) - 1, speed);
   };
 
-  /**
-   * Handles the end of an animation.
-   * @protected
-   * @param {Event} event - The event arguments.
-   */
+ 
   Owl.prototype.onTransitionEnd = function(event) {
 
     // if css2 animation then event object is undefined
