@@ -1264,13 +1264,7 @@
     }, this));
   };
 
-  /**
-   * Gets unified pointer coordinates from event.
-   * @todo #261
-   * @protected
-   * @param {Event} - The `mousedown` or `touchstart` event.
-   * @returns {Object} - Contains `x` and `y` coordinates of current pointer position.
-   */
+
   Owl.prototype.pointer = function(event) {
     var result = { x: null, y: null };
 
@@ -1291,24 +1285,12 @@
     return result;
   };
 
-  /**
-   * Determines if the input is a Number or something that can be coerced to a Number
-   * @protected
-   * @param {Number|String|Object|Array|Boolean|RegExp|Function|Symbol} - The input to be tested
-   * @returns {Boolean} - An indication if the input is a Number or can be coerced to a Number
-   */
+
   Owl.prototype.isNumeric = function(number) {
     return !isNaN(parseFloat(number));
   };
 
-  /**
-   * Gets the difference of two vectors.
-   * @todo #261
-   * @protected
-   * @param {Object} - The first vector.
-   * @param {Object} - The second vector.
-   * @returns {Object} - The difference.
-   */
+
   Owl.prototype.difference = function(first, second) {
     return {
       x: first.x - second.x,
@@ -1316,11 +1298,7 @@
     };
   };
 
-  /**
-   * The jQuery Plugin for the Owl Carousel
-   * @todo Navigation plugin `next` and `prev`
-   * @public
-   */
+ 
   $.fn.owlCarousel = function(option) {
     var args = Array.prototype.slice.call(arguments, 1);
 
@@ -1352,55 +1330,26 @@
     });
   };
 
-  /**
-   * The constructor for the jQuery Plugin
-   * @public
-   */
+
   $.fn.owlCarousel.Constructor = Owl;
 
 })(window.Zepto || window.jQuery, window, document);
 
-/**
- * AutoRefresh Plugin
- * @version 2.1.0
- * @author Artus Kolanowski
- * @author David Deutsch
- * @license The MIT License (MIT)
- */
+
 ;(function($, window, document, undefined) {
 
-  /**
-   * Creates the auto refresh plugin.
-   * @class The Auto Refresh Plugin
-   * @param {Owl} carousel - The Owl Carousel
-   */
+
   var AutoRefresh = function(carousel) {
-    /**
-     * Reference to the core.
-     * @protected
-     * @type {Owl}
-     */
+
     this._core = carousel;
 
-    /**
-     * Refresh interval.
-     * @protected
-     * @type {number}
-     */
+
     this._interval = null;
 
-    /**
-     * Whether the element is currently visible or not.
-     * @protected
-     * @type {Boolean}
-     */
+
     this._visible = null;
 
-    /**
-     * All event handlers.
-     * @protected
-     * @type {Object}
-     */
+
     this._handlers = {
       'initialized.owl.carousel': $.proxy(function(e) {
         if (e.namespace && this._core.settings.autoRefresh) {
@@ -1409,25 +1358,19 @@
       }, this)
     };
 
-    // set default options
+
     this._core.options = $.extend({}, AutoRefresh.Defaults, this._core.options);
 
-    // register event handlers
+
     this._core.$element.on(this._handlers);
   };
 
-  /**
-   * Default options.
-   * @public
-   */
   AutoRefresh.Defaults = {
     autoRefresh: true,
     autoRefreshInterval: 500
   };
 
-  /**
-   * Watches the element.
-   */
+ 
   AutoRefresh.prototype.watch = function() {
     if (this._interval) {
       return;
@@ -1437,9 +1380,7 @@
     this._interval = window.setInterval($.proxy(this.refresh, this), this._core.settings.autoRefreshInterval);
   };
 
-  /**
-   * Refreshes the element.
-   */
+
   AutoRefresh.prototype.refresh = function() {
     if (this._core.$element.is(':visible') === this._visible) {
       return;
@@ -1452,9 +1393,7 @@
     this._visible && (this._core.invalidate('width') && this._core.refresh());
   };
 
-  /**
-   * Destroys the plugin.
-   */
+
   AutoRefresh.prototype.destroy = function() {
     var handler, property;
 
@@ -1472,41 +1411,19 @@
 
 })(window.Zepto || window.jQuery, window, document);
 
-/**
- * Lazy Plugin
- * @version 2.1.0
- * @author Bartosz Wojciechowski
- * @author David Deutsch
- * @license The MIT License (MIT)
- */
+
 ;(function($, window, document, undefined) {
 
-  /**
-   * Creates the lazy plugin.
-   * @class The Lazy Plugin
-   * @param {Owl} carousel - The Owl Carousel
-   */
+
   var Lazy = function(carousel) {
 
-    /**
-     * Reference to the core.
-     * @protected
-     * @type {Owl}
-     */
+
     this._core = carousel;
 
-    /**
-     * Already loaded items.
-     * @protected
-     * @type {Array.<jQuery>}
-     */
+
     this._loaded = [];
 
-    /**
-     * Event handlers.
-     * @protected
-     * @type {Object}
-     */
+
     this._handlers = {
       'initialized.owl.carousel change.owl.carousel resized.owl.carousel': $.proxy(function(e) {
         if (!e.namespace) {
@@ -1534,17 +1451,14 @@
       }, this)
     };
 
-    // set the default options
+
     this._core.options = $.extend({}, Lazy.Defaults, this._core.options);
 
-    // register event handler
+
     this._core.$element.on(this._handlers);
   };
 
-  /**
-   * Default options.
-   * @public
-   */
+
   Lazy.Defaults = {
     lazyLoad: false
   };
