@@ -1543,25 +1543,19 @@
       }, this)
     };
 
-    // set default options
+
     this._core.options = $.extend({}, AutoHeight.Defaults, this._core.options);
 
-    // register event handlers
+
     this._core.$element.on(this._handlers);
   };
 
-  /**
-   * Default options.
-   * @public
-   */
+
   AutoHeight.Defaults = {
     autoHeight: false,
     autoHeightClass: 'owl-height'
   };
 
-  /**
-   * Updates the view.
-   */
   AutoHeight.prototype.update = function() {
     var start = this._core._current,
       end = start + this._core.settings.items,
