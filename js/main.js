@@ -897,13 +897,7 @@
     return this._speed;
   };
 
-  /**
-   * Gets the coordinate of an item.
-   * @todo The name of this method is missleanding.
-   * @public
-   * @param {Number} position - The absolute position of the item within `minimum()` and `maximum()`.
-   * @returns {Number|Array.<Number>} - The coordinate of the item in pixel or all coordinates.
-   */
+ 
   Owl.prototype.coordinates = function(position) {
     var multiplier = 1,
       newPosition = position - 1,
