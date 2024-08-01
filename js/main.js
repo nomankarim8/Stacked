@@ -1463,11 +1463,7 @@
     lazyLoad: false
   };
 
-  /**
-   * Loads all resources of an item at the specified position.
-   * @param {Number} position - The absolute position of the item.
-   * @protected
-   */
+
   Lazy.prototype.load = function(position) {
     var $item = this._core.$stage.children().eq(position),
       $elements = $item && $item.find('.owl-lazy');
@@ -1503,10 +1499,7 @@
     this._loaded.push($item.get(0));
   };
 
-  /**
-   * Destroys the plugin.
-   * @public
-   */
+
   Lazy.prototype.destroy = function() {
     var handler, property;
 
@@ -1522,33 +1515,15 @@
 
 })(window.Zepto || window.jQuery, window, document);
 
-/**
- * AutoHeight Plugin
- * @version 2.1.0
- * @author Bartosz Wojciechowski
- * @author David Deutsch
- * @license The MIT License (MIT)
- */
+
 ;(function($, window, document, undefined) {
 
-  /**
-   * Creates the auto height plugin.
-   * @class The Auto Height Plugin
-   * @param {Owl} carousel - The Owl Carousel
-   */
+
   var AutoHeight = function(carousel) {
-    /**
-     * Reference to the core.
-     * @protected
-     * @type {Owl}
-     */
+
     this._core = carousel;
 
-    /**
-     * All event handlers.
-     * @protected
-     * @type {Object}
-     */
+
     this._handlers = {
       'initialized.owl.carousel refreshed.owl.carousel': $.proxy(function(e) {
         if (e.namespace && this._core.settings.autoHeight) {
