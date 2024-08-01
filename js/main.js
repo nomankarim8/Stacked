@@ -987,11 +987,11 @@
  
   Owl.prototype.onTransitionEnd = function(event) {
 
-    // if css2 animation then event object is undefined
+
     if (event !== undefined) {
       event.stopPropagation();
 
-      // Catch only owl-stage transitionEnd event
+
       if ((event.target || event.srcElement || event.originalTarget) !== this.$stage.get(0)) {
         return false;
       }
@@ -1001,11 +1001,7 @@
     this.trigger('translated');
   };
 
-  /**
-   * Gets viewport width.
-   * @protected
-   * @return {Number} - The width in pixel.
-   */
+ 
   Owl.prototype.viewport = function() {
     var width;
     if (this.options.responsiveBaseElement !== window) {
@@ -1020,11 +1016,7 @@
     return width;
   };
 
-  /**
-   * Replaces the current content.
-   * @public
-   * @param {HTMLElement|jQuery|String} content - The new content.
-   */
+ 
   Owl.prototype.replace = function(content) {
     this.$stage.empty();
     this._items = [];
@@ -1051,13 +1043,7 @@
     this.invalidate('items');
   };
 
-  /**
-   * Adds an item.
-   * @todo Use `item` instead of `content` for the event arguments.
-   * @public
-   * @param {HTMLElement|jQuery|String} content - The item content to add.
-   * @param {Number} [position] - The relative position at which to insert the item otherwise the item will be added to the end.
-   */
+
   Owl.prototype.add = function(content, position) {
     var current = this.relative(this._current);
 
@@ -1086,12 +1072,7 @@
     this.trigger('added', { content: content, position: position });
   };
 
-  /**
-   * Removes an item by its position.
-   * @todo Use `item` instead of `content` for the event arguments.
-   * @public
-   * @param {Number} position - The relative position of the item to remove.
-   */
+
   Owl.prototype.remove = function(position) {
     position = this.normalize(position, true);
 
@@ -1110,11 +1091,7 @@
     this.trigger('removed', { content: null, position: position });
   };
 
-  /**
-   * Preloads images with auto width.
-   * @todo Replace by a more generic approach
-   * @protected
-   */
+
   Owl.prototype.preloadAutoWidthImages = function(images) {
     images.each($.proxy(function(i, element) {
       this.enter('pre-loading');
@@ -1128,10 +1105,7 @@
     }, this));
   };
 
-  /**
-   * Destroys the carousel.
-   * @public
-   */
+
   Owl.prototype.destroy = function() {
 
     this.$element.off('.owl.core');
@@ -1164,13 +1138,7 @@
       .removeData('owl.carousel');
   };
 
-  /**
-   * Operators to calculate right-to-left and left-to-right.
-   * @protected
-   * @param {Number} [a] - The left side operand.
-   * @param {String} [o] - The operator.
-   * @param {Number} [b] - The right side operand.
-   */
+ 
   Owl.prototype.op = function(a, o, b) {
     var rtl = this.settings.rtl;
     switch (o) {
@@ -1187,14 +1155,7 @@
     }
   };
 
-  /**
-   * Attaches to an internal event.
-   * @protected
-   * @param {HTMLElement} element - The event source.
-   * @param {String} event - The event name.
-   * @param {Function} listener - The event handler to attach.
-   * @param {Boolean} capture - Wether the event should be handled at the capturing phase or not.
-   */
+
   Owl.prototype.on = function(element, event, listener, capture) {
     if (element.addEventListener) {
       element.addEventListener(event, listener, capture);
@@ -1203,14 +1164,7 @@
     }
   };
 
-  /**
-   * Detaches from an internal event.
-   * @protected
-   * @param {HTMLElement} element - The event source.
-   * @param {String} event - The event name.
-   * @param {Function} listener - The attached event handler to detach.
-   * @param {Boolean} capture - Wether the attached event handler was registered as a capturing listener or not.
-   */
+
   Owl.prototype.off = function(element, event, listener, capture) {
     if (element.removeEventListener) {
       element.removeEventListener(event, listener, capture);
@@ -1219,17 +1173,7 @@
     }
   };
 
-  /**
-   * Triggers a public event.
-   * @todo Remove `status`, `relatedTarget` should be used instead.
-   * @protected
-   * @param {String} name - The event name.
-   * @param {*} [data=null] - The event data.
-   * @param {String} [namespace=carousel] - The event namespace.
-   * @param {String} [state] - The state which is associated with the event.
-   * @param {Boolean} [enter=false] - Indicates if the call enters the specified state or not.
-   * @returns {Event} - The event arguments.
-   */
+ 
   Owl.prototype.trigger = function(name, data, namespace, state, enter) {
     var status = {
       item: { count: this._items.length, index: this.current() }
@@ -1259,10 +1203,6 @@
     return event;
   };
 
-  /**
-   * Enters a state.
-   * @param name - The state name.
-   */
   Owl.prototype.enter = function(name) {
     $.each([ name ].concat(this._states.tags[name] || []), $.proxy(function(i, name) {
       if (this._states.current[name] === undefined) {
@@ -1273,21 +1213,14 @@
     }, this));
   };
 
-  /**
-   * Leaves a state.
-   * @param name - The state name.
-   */
+
   Owl.prototype.leave = function(name) {
     $.each([ name ].concat(this._states.tags[name] || []), $.proxy(function(i, name) {
       this._states.current[name]--;
     }, this));
   };
 
-  /**
-   * Registers an event or state.
-   * @public
-   * @param {Object} object - The event or state to register.
-   */
+ 
   Owl.prototype.register = function(object) {
     if (object.type === Owl.Type.Event) {
       if (!$.event.special[object.name]) {
@@ -1317,22 +1250,14 @@
     }
   };
 
-  /**
-   * Suppresses events.
-   * @protected
-   * @param {Array.<String>} events - The events to suppress.
-   */
+ 
   Owl.prototype.suppress = function(events) {
     $.each(events, $.proxy(function(index, event) {
       this._supress[event] = true;
     }, this));
   };
 
-  /**
-   * Releases suppressed events.
-   * @protected
-   * @param {Array.<String>} events - The events to release.
-   */
+
   Owl.prototype.release = function(events) {
     $.each(events, $.proxy(function(index, event) {
       delete this._supress[event];
