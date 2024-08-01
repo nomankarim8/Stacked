@@ -92,7 +92,6 @@
 
 
 
-
 ## Stacked Website
 
 This is a responsive stacked website template created using HTML, CSS, and JavaScript. The design stacks content vertically, providing a clean and user-friendly experience across different devices.
