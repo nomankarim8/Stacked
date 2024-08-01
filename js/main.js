@@ -926,14 +926,7 @@
     return coordinate;
   };
 
-  /**
-   * Calculates the speed for a translation.
-   * @protected
-   * @param {Number} from - The absolute position of the start item.
-   * @param {Number} to - The absolute position of the target item.
-   * @param {Number} [factor=undefined] - The time factor in milliseconds.
-   * @returns {Number} - The time in milliseconds for the translation.
-   */
+
   Owl.prototype.duration = function(from, to, factor) {
     if (factor === 0) {
       return 0;
@@ -942,12 +935,6 @@
     return Math.min(Math.max(Math.abs(to - from), 1), 6) * Math.abs((factor || this.settings.smartSpeed));
   };
 
-  /**
-   * Slides to the specified item.
-   * @public
-   * @param {Number} position - The position of the item.
-   * @param {Number} [speed] - The time in milliseconds for the transition.
-   */
   Owl.prototype.to = function(position, speed) {
     var current = this.current(),
       revert = null,
