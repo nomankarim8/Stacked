@@ -2392,11 +2392,7 @@
 
   
   var Hash = function(carousel) {
-    /**
-     * Reference to the core.
-     * @protected
-     * @type {Owl}
-     */
+    
     this._core = carousel;
 
     /**
