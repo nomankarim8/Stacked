@@ -2395,17 +2395,10 @@
     
     this._core = carousel;
 
-    /**
-     * Hash index for the items.
-     * @protected
-     * @type {Object}
-     */
+    
     this._hashes = {};
 
-    /**
-     * The carousel element.
-     * @type {jQuery}
-     */
+    
     this.$element = this._core.$element;
 
     /**
