@@ -2098,32 +2098,15 @@
 
 
   var Navigation = function(carousel) {
-    /**
-     * Reference to the core.
-     * @protected
-     * @type {Owl}
-     */
+
     this._core = carousel;
 
-    /**
-     * Indicates whether the plugin is initialized or not.
-     * @protected
-     * @type {Boolean}
-     */
+
     this._initialized = false;
 
-    /**
-     * The current paging indexes.
-     * @protected
-     * @type {Array}
-     */
     this._pages = [];
 
-    /**
-     * All DOM elements of the user interface.
-     * @protected
-     * @type {Object}
-     */
+
     this._controls = {};
 
     /**
