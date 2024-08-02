@@ -2109,24 +2109,12 @@
 
     this._controls = {};
 
-    /**
-     * Markup for an indicator.
-     * @protected
-     * @type {Array.<String>}
-     */
     this._templates = [];
 
-    /**
-     * The carousel element.
-     * @type {jQuery}
-     */
+
     this.$element = this._core.$element;
 
-    /**
-     * Overridden methods of the carousel.
-     * @protected
-     * @type {Object}
-     */
+
     this._overrides = {
       next: this._core.next,
       prev: this._core.prev,
