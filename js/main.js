@@ -2065,10 +2065,7 @@
     this._core.leave('rotating');
   };
 
-  /**
-   * Stops the autoplay.
-   * @public
-   */
+
   Autoplay.prototype.pause = function() {
     if (!this._core.is('rotating')) {
       return;
@@ -2077,9 +2074,7 @@
     this._paused = true;
   };
 
-  /**
-   * Destroys the plugin.
-   */
+
   Autoplay.prototype.destroy = function() {
     var handler, property;
 
@@ -2097,21 +2092,11 @@
 
 })(window.Zepto || window.jQuery, window, document);
 
-/**
- * Navigation Plugin
- * @version 2.1.0
- * @author Artus Kolanowski
- * @author David Deutsch
- * @license The MIT License (MIT)
- */
+
 ;(function($, window, document, undefined) {
   'use strict';
 
-  /**
-   * Creates the navigation plugin.
-   * @class The Navigation Plugin
-   * @param {Owl} carousel - The Owl Carousel.
-   */
+
   var Navigation = function(carousel) {
     /**
      * Reference to the core.
