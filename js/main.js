@@ -2024,12 +2024,7 @@
     autoplaySpeed: false
   };
 
-  /**
-   * Starts the autoplay.
-   * @public
-   * @param {Number} [timeout] - The interval before the next animation starts.
-   * @param {Number} [speed] - The animation speed for the animations.
-   */
+
   Autoplay.prototype.play = function(timeout, speed) {
     this._paused = false;
 
@@ -2042,13 +2037,7 @@
     this._setAutoPlayInterval();
   };
 
-  /**
-   * Gets a new timeout
-   * @private
-   * @param {Number} [timeout] - The interval before the next animation starts.
-   * @param {Number} [speed] - The animation speed for the animations.
-   * @return {Timeout}
-   */
+
   Autoplay.prototype._getNextTimeout = function(timeout, speed) {
     if ( this._timeout ) {
       window.clearTimeout(this._timeout);
@@ -2061,18 +2050,12 @@
     }, this), timeout || this._core.settings.autoplayTimeout);
   };
 
-  /**
-   * Sets autoplay in motion.
-   * @private
-   */
+
   Autoplay.prototype._setAutoPlayInterval = function() {
     this._timeout = this._getNextTimeout();
   };
 
-  /**
-   * Stops the autoplay.
-   * @public
-   */
+
   Autoplay.prototype.stop = function() {
     if (!this._core.is('rotating')) {
       return;
