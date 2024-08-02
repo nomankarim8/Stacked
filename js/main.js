@@ -2386,21 +2386,11 @@
 
 })(window.Zepto || window.jQuery, window, document);
 
-/**
- * Hash Plugin
- * @version 2.1.0
- * @author Artus Kolanowski
- * @author David Deutsch
- * @license The MIT License (MIT)
- */
+
 ;(function($, window, document, undefined) {
   'use strict';
 
-  /**
-   * Creates the hash plugin.
-   * @class The Hash Plugin
-   * @param {Owl} carousel - The Owl Carousel
-   */
+  
   var Hash = function(carousel) {
     /**
      * Reference to the core.
