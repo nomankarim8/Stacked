@@ -2190,15 +2190,11 @@
     dotsContainer: false
   };
 
-  /**
-   * Initializes the layout of the plugin and extends the carousel.
-   * @protected
-   */
+
   Navigation.prototype.initialize = function() {
     var override,
       settings = this._core.settings;
 
-    // create DOM structure for relative navigation
     this._controls.$relative = (settings.navContainer ? $(settings.navContainer)
       : $('<div>').addClass(settings.navContainerClass).appendTo(this.$element)).addClass('disabled');
 
@@ -2217,7 +2213,7 @@
         this.next(settings.navSpeed);
       }, this));
 
-    // create DOM structure for absolute navigation
+
     if (!settings.dotsData) {
       this._templates = [ $('<div>')
         .addClass(settings.dotClass)
@@ -2237,16 +2233,13 @@
       this.to(index, settings.dotsSpeed);
     }, this));
 
-    // override public methods of the carousel
+
     for (override in this._overrides) {
       this._core[override] = $.proxy(this[override], this);
     }
   };
 
-  /**
-   * Destroys the plugin.
-   * @protected
-   */
+
   Navigation.prototype.destroy = function() {
     var handler, control, property, override;
 
@@ -2264,10 +2257,7 @@
     }
   };
 
-  /**
-   * Updates the internal state.
-   * @protected
-   */
+
   Navigation.prototype.update = function() {
     var i, j, k,
       lower = this._core.clones().length / 2,
@@ -2300,11 +2290,7 @@
     }
   };
 
-  /**
-   * Draws the user interface.
-   * @todo The option `dotsData` wont work.
-   * @protected
-   */
+
   Navigation.prototype.draw = function() {
     var difference,
       settings = this._core.settings,
@@ -2337,11 +2323,7 @@
     }
   };
 
-  /**
-   * Extends event data.
-   * @protected
-   * @param {Event} event - The event object which gets thrown.
-   */
+
   Navigation.prototype.onTrigger = function(event) {
     var settings = this._core.settings;
 
@@ -2353,11 +2335,6 @@
     };
   };
 
-  /**
-   * Gets the current page position of the carousel.
-   * @protected
-   * @returns {Number}
-   */
   Navigation.prototype.current = function() {
     var current = this._core.relative(this._core.current());
     return $.grep(this._pages, $.proxy(function(page, index) {
@@ -2365,11 +2342,7 @@
     }, this)).pop();
   };
 
-  /**
-   * Gets the current succesor/predecessor position.
-   * @protected
-   * @returns {Number}
-   */
+
   Navigation.prototype.getPosition = function(successor) {
     var position, length,
       settings = this._core.settings;
@@ -2388,31 +2361,16 @@
     return position;
   };
 
-  /**
-   * Slides to the next item or page.
-   * @public
-   * @param {Number} [speed=false] - The time in milliseconds for the transition.
-   */
   Navigation.prototype.next = function(speed) {
     $.proxy(this._overrides.to, this._core)(this.getPosition(true), speed);
   };
 
-  /**
-   * Slides to the previous item or page.
-   * @public
-   * @param {Number} [speed=false] - The time in milliseconds for the transition.
-   */
+ 
   Navigation.prototype.prev = function(speed) {
     $.proxy(this._overrides.to, this._core)(this.getPosition(false), speed);
   };
 
-  /**
-   * Slides to the specified item or page.
-   * @public
-   * @param {Number} position - The position of the item or page.
-   * @param {Number} [speed] - The time in milliseconds for the transition.
-   * @param {Boolean} [standard=false] - Whether to use the standard behaviour or not.
-   */
+  
   Navigation.prototype.to = function(position, speed, standard) {
     var length;
 
