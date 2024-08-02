@@ -1946,17 +1946,9 @@
 
 ;(function($, window, document, undefined) {
 
-  /**
-   * Creates the autoplay plugin.
-   * @class The Autoplay Plugin
-   * @param {Owl} scope - The Owl Carousel
-   */
+
   var Autoplay = function(carousel) {
-    /**
-     * Reference to the core.
-     * @protected
-     * @type {Owl}
-     */
+
     this._core = carousel;
 
     /**
