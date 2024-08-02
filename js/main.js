@@ -2435,13 +2435,13 @@
       }, this)
     };
 
-    // set default options
+
     this._core.options = $.extend({}, Hash.Defaults, this._core.options);
 
-    // register the event handlers
+
     this.$element.on(this._handlers);
 
-    // register event listener for hash navigation
+
     $(window).on('hashchange.owl.navigation', $.proxy(function(e) {
       var hash = window.location.hash.substring(1),
         items = this._core.$stage.children(),
@@ -2455,18 +2455,12 @@
     }, this));
   };
 
-  /**
-   * Default options.
-   * @public
-   */
+  
   Hash.Defaults = {
     URLhashListener: false
   };
 
-  /**
-   * Destroys the plugin.
-   * @public
-   */
+  
   Hash.prototype.destroy = function() {
     var handler, property;
 
@@ -2484,15 +2478,7 @@
 
 })(window.Zepto || window.jQuery, window, document);
 
-/**
- * Support Plugin
- *
- * @version 2.1.0
- * @author Vivid Planet Software GmbH
- * @author Artus Kolanowski
- * @author David Deutsch
- * @license The MIT License (MIT)
- */
+
 ;(function($, window, document, undefined) {
 
   var style = $('<support>').get(0).style,
