@@ -1592,39 +1592,18 @@
 
 ;(function($, window, document, undefined) {
 
-  /**
-   * Creates the video plugin.
-   * @class The Video Plugin
-   * @param {Owl} carousel - The Owl Carousel
-   */
+
   var Video = function(carousel) {
-    /**
-     * Reference to the core.
-     * @protected
-     * @type {Owl}
-     */
+/
     this._core = carousel;
 
-    /**
-     * Cache all video URLs.
-     * @protected
-     * @type {Object}
-     */
+
     this._videos = {};
 
-    /**
-     * Current playing item.
-     * @protected
-     * @type {jQuery}
-     */
+
     this._playing = null;
 
-    /**
-     * All event handlers.
-     * @todo The cloned content removale is too late
-     * @protected
-     * @type {Object}
-     */
+
     this._handlers = {
       'initialized.owl.carousel': $.proxy(function(e) {
         if (e.namespace) {
@@ -1660,10 +1639,8 @@
       }, this)
     };
 
-    // set default options
     this._core.options = $.extend({}, Video.Defaults, this._core.options);
 
-    // register event handlers
     this._core.$element.on(this._handlers);
 
     this._core.$element.on('click.owl.video', '.owl-video-play-icon', $.proxy(function(e) {
@@ -1671,22 +1648,14 @@
     }, this));
   };
 
-  /**
-   * Default options.
-   * @public
-   */
+
   Video.Defaults = {
     video: false,
     videoHeight: false,
     videoWidth: false
   };
 
-  /**
-   * Gets the video ID and the type (YouTube/Vimeo/vzaar only).
-   * @protected
-   * @param {jQuery} target - The target containing the video data.
-   * @param {jQuery} item - The item containing the video.
-   */
+
   Video.prototype.fetch = function(target, item) {
       var type = (function() {
           if (target.attr('data-vimeo-id')) {
@@ -1704,17 +1673,6 @@
 
     if (url) {
 
-      /*
-          Parses the id's out of the following urls (and probably more):
-          https://www.youtube.com/watch?v=:id
-          https://youtu.be/:id
-          https://vimeo.com/:id
-          https://vimeo.com/channels/:channel/:id
-          https://vimeo.com/groups/:group/videos/:id
-          https://app.vzaar.com/videos/:id
-
-          Visual example: https://regexper.com/#(http%3A%7Chttps%3A%7C)%5C%2F%5C%2F(player.%7Cwww.%7Capp.)%3F(vimeo%5C.com%7Cyoutu(be%5C.com%7C%5C.be%7Cbe%5C.googleapis%5C.com)%7Cvzaar%5C.com)%5C%2F(video%5C%2F%7Cvideos%5C%2F%7Cembed%5C%2F%7Cchannels%5C%2F.%2B%5C%2F%7Cgroups%5C%2F.%2B%5C%2F%7Cwatch%5C%3Fv%3D%7Cv%5C%2F)%3F(%5BA-Za-z0-9._%25-%5D*)(%5C%26%5CS%2B)%3F
-      */
 
       id = url.match(/(http:|https:|)\/\/(player.|www.|app.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com)|vzaar\.com)\/(video\/|videos\/|embed\/|channels\/.+\/|groups\/.+\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/);
 
@@ -1744,13 +1702,7 @@
     this.thumbnail(target, this._videos[url]);
   };
 
-  /**
-   * Creates video thumbnail.
-   * @protected
-   * @param {jQuery} target - The target containing the video data.
-   * @param {Object} info - The video info object.
-   * @see `fetch`
-   */
+
   Video.prototype.thumbnail = function(target, video) {
     var tnLink,
       icon,
@@ -1772,7 +1724,7 @@
         target.after(icon);
       };
 
-    // wrap video content into owl-video-wrapper div
+
     target.wrap('<div class="owl-video-wrapper"' + dimensions + '></div>');
 
     if (this._core.settings.lazyLoad) {
@@ -1780,7 +1732,7 @@
       lazyClass = 'owl-lazy';
     }
 
-    // custom thumbnail
+
     if (customTn.length) {
       create(customTn.attr(srcType));
       customTn.remove();
@@ -1815,10 +1767,7 @@
     }
   };
 
-  /**
-   * Stops the current video.
-   * @public
-   */
+
   Video.prototype.stop = function() {
     this._core.trigger('stop', null, 'video');
     this._playing.find('.owl-video-frame').remove();
@@ -1828,11 +1777,7 @@
     this._core.trigger('stopped', null, 'video');
   };
 
-  /**
-   * Starts the current video.
-   * @public
-   * @param {Event} event - The event arguments.
-   */
+
   Video.prototype.play = function(event) {
     var target = $(event.target),
       item = target.closest('.' + this._core.settings.itemClass),
@@ -1870,12 +1815,8 @@
     this._playing = item.addClass('owl-video-playing');
   };
 
-  /**
-   * Checks whether an video is currently in full screen mode or not.
-   * @todo Bad style because looks like a readonly method but changes members.
-   * @protected
-   * @returns {Boolean}
-   */
+
+
   Video.prototype.isInFullScreen = function() {
     var element = document.fullscreenElement || document.mozFullScreenElement ||
         document.webkitFullscreenElement;
@@ -1883,9 +1824,6 @@
     return element && $(element).parent().hasClass('owl-video-frame');
   };
 
-  /**
-   * Destroys the plugin.
-   */
   Video.prototype.destroy = function() {
     var handler, property;
 
@@ -1903,20 +1841,10 @@
 
 })(window.Zepto || window.jQuery, window, document);
 
-/**
- * Animate Plugin
- * @version 2.1.0
- * @author Bartosz Wojciechowski
- * @author David Deutsch
- * @license The MIT License (MIT)
- */
+
 ;(function($, window, document, undefined) {
 
-  /**
-   * Creates the animate plugin.
-   * @class The Navigation Plugin
-   * @param {Owl} scope - The Owl Carousel
-   */
+
   var Animate = function(scope) {
     this.core = scope;
     this.core.options = $.extend({}, Animate.Defaults, this.core.options);
