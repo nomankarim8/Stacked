@@ -2745,19 +2745,7 @@ doc.on('ready', init);
       return false;
     });
 
-    /*
-      Show context menu for image on right-click
 
-      There is a div containing the navigation that spans the entire image and lives above of it. If
-      you right-click, you are right clicking this div and not the image. This prevents users from
-      saving the image or using other context menu actions with the image.
-
-      To fix this, when we detect the right mouse button is pressed down, but not yet clicked, we
-      set pointer-events to none on the nav div. This is so that the upcoming right-click event on
-      the next mouseup will bubble down to the image. Once the right-click/contextmenu event occurs
-      we set the pointer events back to auto for the nav div so it can capture hover and left-click
-      events as usual.
-     */
     this.$nav.on('mousedown', function(event) {
       if (event.which === 3) {
         self.$nav.css('pointer-events', 'none');
@@ -2777,7 +2765,7 @@ doc.on('ready', init);
     });
   };
 
-  // Show overlay and lightbox. If the image is part of a set, add siblings to album array.
+
   Lightbox.prototype.start = function($link) {
     var self    = this;
     var $window = $(window);
@@ -2800,7 +2788,6 @@ doc.on('ready', init);
       });
     }
 
-    // Support both data-lightbox attribute and rel attribute implementations
     var dataLightboxValue = $link.attr('data-lightbox');
     var $links;
 
@@ -2814,10 +2801,10 @@ doc.on('ready', init);
       }
     } else {
       if ($link.attr('rel') === 'lightbox') {
-        // If image is not part of a set
+
         addToAlbum($link);
       } else {
-        // If image is part of a set
+
         $links = $($link.prop('tagName') + '[rel="' + $link.attr('rel') + '"]');
         for (var j = 0; j < $links.length; j = ++j) {
           addToAlbum($($links[j]));
@@ -2828,7 +2815,7 @@ doc.on('ready', init);
       }
     }
 
-    // Position Lightbox
+
     var top  = $window.scrollTop() + this.options.positionFromTop;
     var left = $window.scrollLeft();
     this.$lightbox.css({
@@ -2836,7 +2823,7 @@ doc.on('ready', init);
       left: left + 'px'
     }).fadeIn(this.options.fadeDuration);
 
-    // Disable scrolling of the page while open
+
     if (this.options.disableScrolling) {
       $('body').addClass('lb-disable-scrolling');
     }
