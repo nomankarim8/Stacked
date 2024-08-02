@@ -1874,20 +1874,13 @@
     this.core.$element.on(this.handlers);
   };
 
-  /**
-   * Default options.
-   * @public
-   */
+ 
   Animate.Defaults = {
     animateOut: false,
     animateIn: false
   };
 
-  /**
-   * Toggles the animation classes whenever an translations starts.
-   * @protected
-   * @returns {Boolean|undefined}
-   */
+
   Animate.prototype.swap = function() {
 
     if (this.core.settings.items !== 1) {
