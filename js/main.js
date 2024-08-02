@@ -1927,10 +1927,7 @@
     this.core.onTransitionEnd();
   };
 
-  /**
-   * Destroys the plugin.
-   * @public
-   */
+
   Animate.prototype.destroy = function() {
     var handler, property;
 
@@ -1946,14 +1943,7 @@
 
 })(window.Zepto || window.jQuery, window, document);
 
-/**
- * Autoplay Plugin
- * @version 2.1.0
- * @author Bartosz Wojciechowski
- * @author Artus Kolanowski
- * @author David Deutsch
- * @license The MIT License (MIT)
- */
+
 ;(function($, window, document, undefined) {
 
   /**
