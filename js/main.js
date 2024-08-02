@@ -1951,23 +1951,12 @@
 
     this._core = carousel;
 
-    /**
-     * The autoplay timeout.
-     * @type {Timeout}
-     */
+
     this._timeout = null;
 
-    /**
-     * Indicates whenever the autoplay is paused.
-     * @type {Boolean}
-     */
+
     this._paused = false;
 
-    /**
-     * All event handlers.
-     * @protected
-     * @type {Object}
-     */
     this._handlers = {
       'changed.owl.carousel': $.proxy(function(e) {
         if (e.namespace && e.property.name === 'settings') {
@@ -1977,7 +1966,7 @@
             this.stop();
           }
         } else if (e.namespace && e.property.name === 'position') {
-          //console.log('play?', e);
+
           if (this._core.settings.autoplay) {
             this._setAutoPlayInterval();
           }
@@ -2020,17 +2009,14 @@
       }, this)
     };
 
-    // register event handlers
+
     this._core.$element.on(this._handlers);
 
-    // set default options
+
     this._core.options = $.extend({}, Autoplay.Defaults, this._core.options);
   };
 
-  /**
-   * Default options.
-   * @public
-   */
+
   Autoplay.Defaults = {
     autoplay: false,
     autoplayTimeout: 5000,
