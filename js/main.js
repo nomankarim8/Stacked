@@ -2121,11 +2121,7 @@
       to: this._core.to
     };
 
-    /**
-     * All event handlers.
-     * @protected
-     * @type {Object}
-     */
+
     this._handlers = {
       'prepared.owl.carousel': $.proxy(function(e) {
         if (e.namespace && this._core.settings.dotsData) {
@@ -2168,18 +2164,14 @@
       }, this)
     };
 
-    // set default options
+
     this._core.options = $.extend({}, Navigation.Defaults, this._core.options);
 
-    // register event handlers
+
     this.$element.on(this._handlers);
   };
 
-  /**
-   * Default options.
-   * @public
-   * @todo Rename `slideBy` to `navBy`
-   */
+
   Navigation.Defaults = {
     nav: false,
     navText: [ 'prev', 'next' ],
