@@ -2566,14 +2566,14 @@ var openMenu = function() {
   menu.classList.toggle('nav__list--active');
 };
 
-// reveal content of first panel by default
+
 panel.eq(0).find('.panel__content').addClass('panel__content--active');
 
 var scrollFx = function() {
   var ds = doc.scrollTop();
   var of = vh / 4;
   
-  // if the panel is in the viewport, reveal the content, if not, hide it.
+
   for (var i = 0; i < panel.length; i++) {
     if (panel.eq(i).offset().top < ds+of) {
      panel
@@ -2612,30 +2612,16 @@ doc.on('ready', init);
 
 
 
-/*!
- * Lightbox v2.9.0
- * by Lokesh Dhakar
- *
- * More info:
- * http://lokeshdhakar.com/projects/lightbox2/
- *
- * Copyright 2007, 2015 Lokesh Dhakar
- * Released under the MIT license
- * https://github.com/lokesh/lightbox2/blob/master/LICENSE
- */
 
-// Uses Node, AMD or browser globals to create a module.
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
-        // AMD. Register as an anonymous module.
+
         define(['jquery'], factory);
     } else if (typeof exports === 'object') {
-        // Node. Does not work with strict CommonJS, but
-        // only CommonJS-like environments that support module.exports,
-        // like Node.
+
         module.exports = factory(require('jquery'));
     } else {
-        // Browser globals (root is window)
+
         root.lightbox = factory(root.jQuery);
     }
 }(this, function ($) {
@@ -2645,34 +2631,26 @@ doc.on('ready', init);
     this.currentImageIndex = void 0;
     this.init();
 
-    // options
+
     this.options = $.extend({}, this.constructor.defaults);
     this.option(options);
   }
 
-  // Descriptions of all options available on the demo site:
-  // http://lokeshdhakar.com/projects/lightbox2/index.html#options
+
   Lightbox.defaults = {
     albumLabel: 'Image %1 of %2',
     alwaysShowNavOnTouchDevices: false,
     fadeDuration: 600,
     fitImagesInViewport: true,
     imageFadeDuration: 600,
-    // maxWidth: 800,
-    // maxHeight: 600,
+
+
     positionFromTop: 50,
     resizeDuration: 700,
     showImageNumberLabel: true,
     wrapAround: false,
     disableScrolling: false,
-    /*
-    Sanitize Title
-    If the caption data is trusted, for example you are hardcoding it in, then leave this to false.
-    This will free you to add html tags, such as links, in the caption.
 
-    If the caption data is user submitted or from some other untrusted source, then set this to true
-    to prevent xss and other injection attacks.
-     */
     sanitizeTitle: false
   };
 
@@ -2686,15 +2664,13 @@ doc.on('ready', init);
 
   Lightbox.prototype.init = function() {
     var self = this;
-    // Both enable and build methods require the body tag to be in the DOM.
+
     $(document).ready(function() {
       self.enable();
       self.build();
     });
   };
 
-  // Loop through anchors and areamaps looking for either data-lightbox attributes or rel attributes
-  // that contain 'lightbox'. When these are clicked, start lightbox.
   Lightbox.prototype.enable = function() {
     var self = this;
     $('body').on('click', 'a[rel^=lightbox], area[rel^=lightbox], a[data-lightbox], area[data-lightbox]', function(event) {
