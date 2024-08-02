@@ -2906,7 +2906,7 @@ doc.on('ready', init);
       .height($(document).height());
   };
 
-  // Animate the size of the lightbox to fit the image we are showing
+
   Lightbox.prototype.sizeContainer = function(imageWidth, imageHeight) {
     var self = this;
 
@@ -2934,7 +2934,7 @@ doc.on('ready', init);
     }
   };
 
-  // Display the image and its details and begin preload neighboring images.
+
   Lightbox.prototype.showImage = function() {
     this.$lightbox.find('.lb-loader').stop(true).hide();
     this.$lightbox.find('.lb-image').fadeIn(this.options.imageFadeDuration);
@@ -2945,11 +2945,9 @@ doc.on('ready', init);
     this.enableKeyboardNav();
   };
 
-  // Display previous and next navigation if appropriate.
+
   Lightbox.prototype.updateNav = function() {
-    // Check to see if the browser supports touch events. If so, we take the conservative approach
-    // and assume that mouse hover events are not supported and always show prev/next navigation
-    // arrows in image sets.
+
     var alwaysShowNav = false;
     try {
       document.createEvent('TouchEvent');
@@ -2981,12 +2979,11 @@ doc.on('ready', init);
     }
   };
 
-  // Display caption, image number, and closing button.
+
   Lightbox.prototype.updateDetails = function() {
     var self = this;
 
-    // Enable anchor clicks in the injected caption html.
-    // Thanks Nate Wright for the fix. @https://github.com/NateWr
+
     if (typeof this.album[this.currentImageIndex].title !== 'undefined' &&
       this.album[this.currentImageIndex].title !== '') {
       var $caption = this.$lightbox.find('.lb-caption');
@@ -3019,7 +3016,7 @@ doc.on('ready', init);
     });
   };
 
-  // Preload previous and next images in set.
+
   Lightbox.prototype.preloadNeighboringImages = function() {
     if (this.album.length > this.currentImageIndex + 1) {
       var preloadNext = new Image();
@@ -3063,7 +3060,7 @@ doc.on('ready', init);
     }
   };
 
-  // Closing time. :-(
+
   Lightbox.prototype.end = function() {
     this.disableKeyboardNav();
     $(window).off('resize', this.sizeOverlay);
