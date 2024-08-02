@@ -2692,7 +2692,7 @@ doc.on('ready', init);
     this.$image          = this.$lightbox.find('.lb-image');
     this.$nav            = this.$lightbox.find('.lb-nav');
 
-    // Store css values for future lookup
+
     this.containerPadding = {
       top: parseInt(this.$container.css('padding-top'), 10),
       right: parseInt(this.$container.css('padding-right'), 10),
