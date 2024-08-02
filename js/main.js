@@ -2831,7 +2831,6 @@ doc.on('ready', init);
     this.changeImage(imageNumber);
   };
 
-  // Hide most UI elements in preparation for the animated resizing of the lightbox.
   Lightbox.prototype.changeImage = function(imageNumber) {
     var self = this;
 
@@ -2845,7 +2844,7 @@ doc.on('ready', init);
 
     this.$outerContainer.addClass('animating');
 
-    // When image to show is preloaded, we send the width and height to sizeContainer()
+
     var preloader = new Image();
     preloader.onload = function() {
       var $preloader;
