@@ -2401,11 +2401,7 @@
     
     this.$element = this._core.$element;
 
-    /**
-     * All event handlers.
-     * @protected
-     * @type {Object}
-     */
+    
     this._handlers = {
       'initialized.owl.carousel': $.proxy(function(e) {
         if (e.namespace && this._core.settings.startPosition === 'URLHash') {
