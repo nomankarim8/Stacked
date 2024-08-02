@@ -2707,7 +2707,7 @@ doc.on('ready', init);
       left: parseInt(this.$image.css('border-left-width'), 10)
     };
 
-    // Attach event handlers to the newly minted DOM elements
+
     this.$overlay.hide().on('click', function() {
       self.end();
       return false;
