@@ -1960,7 +1960,7 @@ if (typeof jQuery === 'undefined') {
           .attr('aria-expanded', true)
 
       if (transition) {
-        element[0].offsetWidth // reflow for transition
+        element[0].offsetWidth 
         element.addClass('in')
       } else {
         element.removeClass('fade')
