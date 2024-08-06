@@ -1498,7 +1498,7 @@ if (typeof jQuery === 'undefined') {
     if (/right|left/.test(placement)) {
       var topEdgeOffset    = pos.top - viewportPadding - viewportDimensions.scroll
       var bottomEdgeOffset = pos.top + viewportPadding - viewportDimensions.scroll + actualHeight
-      if (topEdgeOffset < viewportDimensions.top) { // top overflow
+      if (topEdgeOffset < viewportDimensions.top) { 
         delta.top = viewportDimensions.top - topEdgeOffset
       } else if (bottomEdgeOffset > viewportDimensions.top + viewportDimensions.height) { 
         delta.top = viewportDimensions.top + viewportDimensions.height - bottomEdgeOffset
