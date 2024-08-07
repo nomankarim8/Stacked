@@ -1594,7 +1594,7 @@
 
 
   var Video = function(carousel) {
-/
+
     this._core = carousel;
 
 
