@@ -2720,6 +2720,11 @@ doc.on('ready', init);
       return false;
     });
 
+
+
+
+
+    
     this.$outerContainer.on('click', function(event) {
       if ($(event.target).attr('id') === 'lightbox') {
         self.end();
