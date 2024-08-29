@@ -2721,7 +2721,6 @@ doc.on('ready', init);
     });
 
 
-
     
     this.$outerContainer.on('click', function(event) {
       if ($(event.target).attr('id') === 'lightbox') {
