@@ -2342,8 +2342,9 @@
     }, this)).pop();
   };
 
-  
 
+
+  
   Navigation.prototype.getPosition = function(successor) {
     var position, length,
       settings = this._core.settings;
