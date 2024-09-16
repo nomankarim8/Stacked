@@ -2344,7 +2344,7 @@
 
 
 
-  
+
   Navigation.prototype.getPosition = function(successor) {
     var position, length,
       settings = this._core.settings;
@@ -2384,6 +2384,7 @@
     }
   };
 
+  
   $.fn.owlCarousel.Constructor.Plugins.Navigation = Navigation;
 
 })(window.Zepto || window.jQuery, window, document);
