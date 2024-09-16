@@ -2342,6 +2342,7 @@
     }, this)).pop();
   };
 
+  
 
   Navigation.prototype.getPosition = function(successor) {
     var position, length,
@@ -2662,7 +2663,7 @@ doc.on('ready', init);
     return this.options.albumLabel.replace(/%1/g, currentImageNum).replace(/%2/g, totalImages);
   };
 
-  
+
   Lightbox.prototype.init = function() {
     var self = this;
 
