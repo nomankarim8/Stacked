@@ -2384,7 +2384,7 @@
     }
   };
 
-  
+
   $.fn.owlCarousel.Constructor.Plugins.Navigation = Navigation;
 
 })(window.Zepto || window.jQuery, window, document);
@@ -2419,6 +2419,7 @@
             return;
           }
 
+          
           this._hashes[hash] = e.content;
         }
       }, this),
