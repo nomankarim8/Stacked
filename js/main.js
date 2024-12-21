@@ -5,6 +5,7 @@
   function Owl(element, options) {
 
 
+    
     this.settings = null;
 
     this.options = $.extend({}, Owl.Defaults, options);
